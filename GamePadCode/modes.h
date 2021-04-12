@@ -1,4 +1,4 @@
-#include "graphic_PIX.h"
+#include "intro_PIX.h"
 
  int initIntro;
  boolean isFirstLevel,isSecondLevel,isThirdLevel,isFourthLevel,isFifthLevel,isSixthLevel;
@@ -17,11 +17,12 @@ void initModes(){
  void introScreen(){
  if(initIntro==false){
   tft.setClipRect(0,0,screenW, screenH);
-  tft.drawRGBBitmap(0,0,graphic_PIX[0],320,240); 
+  tft.drawRGBBitmap(0,0,intro_PIX[0],320,240); 
   tft.updateScreen();
   initIntro=true; 
 }
 if(buttonBuffer[0]==1){curMode=0;}
+
  }
  
 
@@ -45,7 +46,7 @@ void secondLevel(){
   tft.setClipRect(0,0,screenW, screenH);
    drawLevel(1);
  tft.updateScreen();
- isFirstLevel=true;
+ isSecondLevel=true;
  }
  drawLevel(1);
  drawHero(); 
@@ -109,7 +110,8 @@ void sixthLevel(){
  drawLevel(5);
  drawHero(); 
 
-if(buttonBuffer[0]==1){curMode=6;}
+if(buttonBuffer[0]==1){curMode=0;}
+isFirstLevel=false;
 }
 
 
@@ -123,5 +125,6 @@ void runMode(){
  case 3: fourthLevel( ); break;
  case 4: fifthLevel( ); break; 
  case 5: sixthLevel ( ); break; 
+ 
 }
 }

@@ -5,7 +5,7 @@ int x;
 void checkFrameRate(){
    x++; 
   if(frameTimer.check( )){
-    Serial.println(x); 
+  //  Serial.println(x); 
     x=0;
   }
 }
