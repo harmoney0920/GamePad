@@ -7,9 +7,12 @@ int curMode = -1;
 #include "screen.h"
 #include "tile.h"
 #include "controls.h"
+#include "status.h"
 #include "interaction.h"
 #include "hero.h"
+#include "enemy.h"
 #include "modes.h"
+
 
 
 
@@ -21,12 +24,13 @@ initScreen();
 initControls();
 initHero();
 initNeighbors();
-
 }
 
 void loop() {
 checkFrameRate();
 getControls();
 runMode();
+//updateHead(1);
+Serial.println(heroX);
 tft.updateScreen();
 }

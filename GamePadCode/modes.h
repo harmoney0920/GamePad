@@ -32,12 +32,20 @@ void firstLevel(){
    drawLevel(0);
  tft.updateScreen();
  isFirstLevel=true;
+  updateHead(0);
  }
  drawLevel(0);
- drawHero(); 
+ drawHero();
+  
+  
 
-if(buttonBuffer[1]==1){curMode=1;}
+
+if(interaction[curMode][curTile] == 0x02 && buttonBuffer[1]==1){curMode = 1; isFirstLevel = false; heroX=10; heroY=120;}
+
 }
+
+
+
 
 
 
@@ -51,7 +59,8 @@ void secondLevel(){
  drawLevel(1);
  drawHero(); 
  
-if(buttonBuffer[0]==1){curMode=2;}
+if(interaction[curMode][curTile] == 0x09 && buttonBuffer[1]==1){curMode =2; isSecondLevel = false; heroX=150; heroY=160;}
+if(interaction[curMode][curTile] == 0x03 && buttonBuffer[1]==1){curMode = 4; isSecondLevel = false; heroX=160; heroY=120;}
 }
 
 
@@ -65,8 +74,8 @@ void thirdLevel(){
  }
  drawLevel(2);
  drawHero(); 
-
-if(buttonBuffer[1]==1){curMode=3;}
+if(interaction[curMode][curTile] == 0x07 && buttonBuffer[1]==1){curMode = 1; isThirdLevel = false; heroX=160; heroY=120;}
+if(interaction[curMode][curTile] == 0x1A && buttonBuffer[1]==1){curMode = 5; isThirdLevel = false; heroX=160; heroY=120;}
 }
 
 
@@ -80,8 +89,7 @@ void fourthLevel(){
  }
  drawLevel(3);
  drawHero(); 
-
-if(buttonBuffer[0]==1){curMode=4;}
+ if(interaction[curMode][curTile] == 0x06 && buttonBuffer[1]==1){curMode = 1; isFourthLevel = false; heroX=10; heroY=120;}
 }
 
 
@@ -95,8 +103,8 @@ void fifthLevel(){
  }
  drawLevel(4);
  drawHero(); 
+ if(interaction[curMode][curTile] == 0x02 && buttonBuffer[1]==1){curMode = 1; isFifthLevel = false; heroX=10; heroY=120;}
 
- if(buttonBuffer[1]==1){curMode=5;}
 }
 
 
@@ -109,8 +117,6 @@ void sixthLevel(){
  }
  drawLevel(5);
  drawHero(); 
-
-if(buttonBuffer[0]==1){curMode=0;}
 isFirstLevel=false;
 }
 
