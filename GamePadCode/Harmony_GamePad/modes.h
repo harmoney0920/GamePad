@@ -33,8 +33,12 @@ void firstLevel(){
  tft.updateScreen();
  isFirstLevel=true;
   updateHead(0);
+  enemyX=250;
+  enemyY=120;
+  
  }
  drawLevel(0);
+ drawEnemy();
  drawHero();
   
   

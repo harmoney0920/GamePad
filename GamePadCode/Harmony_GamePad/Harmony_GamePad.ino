@@ -20,6 +20,7 @@ int curMode = -1;
 
 void setup() {
   Serial.begin(9600);
+  randomSeed(analogRead(A9));
 initScreen();
 initControls();
 initHero();
