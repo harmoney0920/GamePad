@@ -43,11 +43,5 @@ void getControls(){
                  }else {
                   joystickBuffer[1]=0; 
        }  
-        
-                     if(statusTimer.check()){
-                   //  Serial.println(joystickBuffer[0]);
-                   //  Serial.println(joystickBuffer[1]);
-                //    Serial.println(buttonBuffer[0]);
-  }
 }
  

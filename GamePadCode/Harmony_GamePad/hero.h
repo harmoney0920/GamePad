@@ -2,13 +2,8 @@
 #include "hero_PIX.h"
 
 float heroX, heroY, heroSpeed= 1;
-
 boolean isLevelDrawn, heroDir; 
-
 int heroFrame, heroW, heroH;
-
-
-
 
 Metro heroFrameTimer = Metro(250); // A prototype for a Metro timer
 
@@ -32,9 +27,7 @@ void drawHero(){
     heroX=nextX;
     heroY=nextY;
   }
- 
-
-  if(joystickBuffer[1]==1){
+ if(joystickBuffer[1]==1){
    heroDir=true;
   }else if (joystickBuffer[1] == -1){
     heroDir=false;

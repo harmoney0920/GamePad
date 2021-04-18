@@ -11,16 +11,14 @@ int curMode = -1;
 #include "interaction.h"
 #include "hero.h"
 #include "enemy.h"
+#include "Iceman.h"
+#include "fight.h"
 #include "modes.h"
 
 
-
-
-
-
 void setup() {
-  Serial.begin(9600);
-  randomSeed(analogRead(A9));
+Serial.begin(9600);
+randomSeed(analogRead(A9));
 initScreen();
 initControls();
 initHero();
@@ -31,7 +29,5 @@ void loop() {
 checkFrameRate();
 getControls();
 runMode();
-//updateHead(1);
-Serial.println(heroX);
 tft.updateScreen();
 }

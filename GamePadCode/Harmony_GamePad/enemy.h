@@ -14,7 +14,7 @@ float enemyX = 0;//Current X coordinate of enemy
 float enemyY = 0;//Current Y coordinate of enemy
 float enemyXDir = 0;//Enemy moving left (-1) or right (1)
 float enemyYDir = 0;//Enemy moving up (-1) or down (1)
-float enemySpeed = 0.15;//How fast can the enemy move?
+float enemySpeed = 1;//How fast can the enemy move?
 int enemyW = 40; //Enemy sprite width
 int enemyH = 24;//Enemy sprite height
 int enemyFrame = 0;//Animation frame of enemy
@@ -57,7 +57,7 @@ void drawEnemy(){
    
   }
   
-   tft.setClipRect(enemyX+4, enemyY+2, enemyW+9, enemyH+9);
+   tft.setClipRect(enemyX-4, enemyY-2, enemyW+9, enemyH+9);
    drawLevel(curMode);
    tft.drawRGBBitmap(enemyX,enemyY, enemy_PIX[enemyFrame], enemy_MASK[enemyFrame],enemyW, enemyH);
    tft.updateScreen();
