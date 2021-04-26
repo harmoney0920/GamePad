@@ -3,19 +3,20 @@
 
 float heroX, heroY, heroSpeed= 1;
 boolean isLevelDrawn, heroDir; 
-int heroFrame, heroW, heroH;
+int heroFrame, heroW, heroH, heroHealth;
 
 Metro heroFrameTimer = Metro(250); // A prototype for a Metro timer
 
 void initHero(){
   heroX=(20);
   heroY= (screenH/2+20);
-  heroSpeed = 0.5;
+  heroSpeed = 1;
   isLevelDrawn=false;
   heroDir=true;
   heroFrame=0;
   heroW=40;
   heroH=32;
+  heroHealth=5;
 }
 
 void drawHero(){
@@ -56,6 +57,20 @@ void drawHero(){
     heroFrame= (heroFrame-1)%4; 
    if (heroFrame<8){heroFrame=4;}
   }
+  }
+   if(heroHealth==5){
+    heart5();
+  }
+  if(heroHealth==4){
+    heart4();
+  }  if(heroHealth==3){
+    heart3();
+  }
+    if(heroHealth==2){
+    heart2();
+  }
+    if(heroHealth==1){
+    heart1();
   }
 
 

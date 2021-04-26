@@ -11,8 +11,11 @@ int curMode = -1;
 #include "interaction.h"
 #include "hero.h"
 #include "enemy.h"
+#include "enemy2.h"
 #include "Iceman.h"
 #include "fight.h"
+#include "enemyAttack.h"
+#include "IcemanFight.h"
 #include "modes.h"
 
 

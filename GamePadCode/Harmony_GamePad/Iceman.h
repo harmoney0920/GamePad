@@ -8,7 +8,7 @@ Metro icemanBrainTimer = Metro(1000);
 int icemanMargin = 1;//Margin for drawing clipRect around enemy
 int icemanStatus = 1;//Keeps track of active/inactive enemies
 int icemanType = 0; //Which enemy is this: Zombie/Unicorn?
-int icemanHealth = 1; //How much health is remaining?
+int icemanHealth = 2; //How much health is remaining?
 int icemanSmart = 3;//How smart is the enemy?
 float icemanX = 0;//Current X coordinate of enemy
 float icemanY = 0;//Current Y coordinate of enemy
@@ -30,14 +30,12 @@ void drawIceman(){
     else {
       if(heroX < icemanX){
         icemanXDir=icemanXDir -1;
-        icemanFrame=8;
+        icemanFrame=1;
  
       }
       if(heroX > icemanX){
         icemanXDir=icemanXDir + 1;
         icemanFrame=0;
-        if(icemanFrameTimer.check()){
-       icemanFrame= (icemanFrame+1)%2; 
         }
       }
       if(heroY < icemanY){
@@ -55,7 +53,7 @@ void drawIceman(){
     icemanY=nextY;
   }
    
-  }
+  
 
    tft.setClipRect(icemanX-4, icemanY-2, icemanW+9, icemanH+9);
    drawLevel(curMode);
